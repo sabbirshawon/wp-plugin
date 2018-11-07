@@ -72,10 +72,10 @@ class DigitaPlugins
 		flush_rewrite_rules();
 	}
 
-	function uninstall(){
-		// delete CPT
-		// delete all the plugin data from DB
-	}
+	// function uninstall(){
+	// 	// delete CPT
+	// 	// delete all the plugin data from DB
+	// }
 
 	function custom_post_type(){
 		register_post_type( 'pharma' , ['public' => true, 'label' => 'Pharma']);
@@ -101,6 +101,5 @@ register_deactivation_hook ( __FILE__ , array($digitaPlugin,'deactivate'));
 
 // uninstall
 
-register_uninstall_hook ( __FILE__ , array($digitaPlugin,'uninstall'));
+// register_uninstall_hook ( __FILE__ , array($digitaPlugin,'uninstall'));
 
-// register_activation_hook (__FILE__, array(digitaPlugin,'activate'));

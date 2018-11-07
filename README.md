@@ -1,3 +1,3 @@
 # wp-plugin
 
-# This is Begineer level for started learning WP Plugin Developement
+# This is Begineer level of started learning WP Plugin Developement

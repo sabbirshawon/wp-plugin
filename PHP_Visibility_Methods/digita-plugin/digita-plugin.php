@@ -37,100 +37,70 @@ defined ('ABSPATH') or die ('Hey, you can\t access this file, you silly human!')
 class DigitaPlugins 
 {
 	//methods
-
 	// Public 
 	// can be accessed everywhere
-
-
 	// Protected 
 	// can be accessed only within the class itself or extensions of that class
-
 	//Private
 	// can be accessed only within the class itself
-
 	// Static
-
 	public $var1 = 1;
-
 	Protected $array = array();
-
-
 	function __construct(){
-
-
 		// $this->print_stuff();
 	}
-
 	function register(){
 		add_action( 'admin_enqueue_scripts', array($this, 'enqueue') );
 	}
-
-
 	Protected function create_post_type(){
 		add_action ( 'init', array( $this, 'custom_post_type') );
 	}
-
 	function activate(){
 		// generate a CPT
 		$this-> custom_post_type();
 		// flush rewrite rules
 		flush_rewrite_rules();
 	}
-
 	function deactivate(){
 		// flush rewrite rules
 		flush_rewrite_rules();
 	}
-
 	
 	// function uninstall(){
 	// 	// delete CPT
 	// 	// delete all the plugin data from DB
 	// }
-
 	function custom_post_type(){
 		register_post_type( 'pharma' , ['public' => true, 'label' => 'Pharma']);
 	}
-
 	function enqueue(){
 		// enqueue all our scripts
 		wp_enqueue_style('mypluginstyle',plugins_url( '/assets/mystyle.css', __FILE__ ));
 		 wp_enqueue_script('mypluginscript',plugins_url( '/assets/myscript.js', __FILE__ ));
 	}
-
 	private function print_stuff(){
 		echo 'Test';
 	}
 }
-
-
 class SecondClass extends DigitaPlugins{
 	function __construct(){
-		$this->print_stuff();
+		// $this->print_stuff();
 	}
 	function register_post_type(){
 		$this->create_post_type();
 	}
 }
-
-
-
 if ( class_exists('DigitaPlugins') ){
 	$digitaPlugin = new DigitaPlugins();
 	$digitaPlugin->register();
-	 $digitaPlugin->print_stuff();
+	// $digitaPlugin->print_stuff();
 }
-
 $secondClass = new SecondClass();
 $secondClass->register_post_type();
 // $secondClass->print_stuff();
-
-
 // activation
 register_activation_hook ( __FILE__ , array($digitaPlugin,'activate'));
-
 // deactivation
 register_deactivation_hook ( __FILE__ , array($digitaPlugin,'deactivate'));
 // uninstall
-
 // register_uninstall_hook ( __FILE__ , array($digitaPlugin,'uninstall'));

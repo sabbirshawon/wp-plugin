@@ -1,0 +1,12 @@
+{
+    "name": "shawon/digita-plugin",
+    "description": "Awesome starter plugin for Digita Pharma Project",
+    "type": "project",
+    "license": "GPL",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload":{
+        "psr-4":{"Inc\\": "./inc"}
+    }
+
+}

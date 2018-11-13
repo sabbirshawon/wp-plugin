@@ -3,6 +3,12 @@
     "description": "Awesome starter plugin for Digita Pharma Project",
     "type": "project",
     "license": "GPL",
+    "authors": [
+        {
+            "name": "Shawon",
+            "email": "shawon@digitainteractive.com"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {},
     "autoload":{

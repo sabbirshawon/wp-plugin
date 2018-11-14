@@ -1,4 +1,4 @@
-# WP Plugin fROM Scratch
+# WP Plugin From Scratch
 
 Full list of sections and features we will build during the series of Tutorials
 
